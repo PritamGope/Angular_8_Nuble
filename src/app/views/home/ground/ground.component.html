@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2">
+      <div class="left">
+        <div class="move p-3"><span><i class="fas fa-bolt"></i></span> MOVES: {{countMove}}</div>
+        <div class="time p-3"><span><i class="fas fa-hourglass-half"></i></span> TIME:{{hr}}:{{min}}:{{sec}} </div>
+        <!-- <div class="time p-3"><span><i class="fas fa-hourglass-half"></i></span> TIME TAKEN TO SOLVE {{timeTaken}} </div> -->
+          <div class="left_buttons">
+            <button type="button" app-stop-propagation class="btn btn-secondary m-1" ng-click="undoSteps()">UNDO</button>
+        <button type="button" app-stop-propagation class="btn btn-success m-1" ng-click="cofigureGrid(numb)">NEW GAME</button>
+        <button type="button" app-stop-propagation class="btn btn-danger m-1" ng-click="checkIfSolved(array,true)">AUTO SOLVE</button>
+          </div>
+      </div>
+    </div>
+    <div class="col-8">
+      <app-grid [array]="array"></app-grid>
+    </div>
+    <div class="col-2">
+      <div class="right">
+        <div class="moveDetails">
+          <h6>YOUR MOVES</h6>
+          <ol >
+            <li *ngFor="let item of movesArray; let i =index">{{item}}
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="upper_bottom p-2">
+      DIFFICULTY LEVEL
+    </div>
+    <div class="lower_bottom">
+      <div>
+      <button type="button" appStopPropagation class="btn easy m-1" (click)="cofigureGrid(3,$event)">EASY</button>
+      <button type="button" app-stop-propagation class="btn medium m-1" (click)="cofigureGrid(4,$event)">MEDIUM</button>
+      <button type="button" app-stop-propagation class="btn difficult m-1" (click)="cofigureGrid(5,$event)">DIFFICULT</button>
+      <button type="button" app-stop-propagation class="btn custom m-1" (click)="customCofigGrid($event)">CUSTOME</button>
+
+        <input class="p-1 m-1" [(ngModel)]="customVal">
+        <button type="button" class="btn custom m-1" (click)="customCofigGrid()">Enter</button>
+
+      </div>
+    </div>
+  </div>
+</div>

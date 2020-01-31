@@ -1,0 +1,25 @@
+.container-fluid {
+  background-color: #76cee7;
+  width: 100%;
+
+  .topBand {
+    background-color: #f4b321;
+    height: 80px;
+    margin: 0;
+  }
+  .title {
+    width: 200px;
+    margin: auto;
+    position: relative;
+    top: -19px;
+    span {
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 25px;
+      color: white;
+      border: 1px solid white;
+      margin: 2px;
+      padding: 6px 10px 6px 10px;
+      border-radius: 19%;
+    }
+  }
+}
